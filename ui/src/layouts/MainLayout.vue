@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Contacts App
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
@@ -20,6 +20,7 @@
     </q-header>
 
     <q-drawer
+      v-if="false"
       v-model="leftDrawerOpen"
       show-if-above
       bordered
