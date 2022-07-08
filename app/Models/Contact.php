@@ -33,4 +33,18 @@ class Contact extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    protected $appends = [
+        'address',
+    ];
+
+    public function getAddressAttribute()
+    {
+        return collect([
+            $this->city,
+            $this->state,
+            $this->country,
+            $this->zip,
+        ])->filter()->values()->implode(', ');
+    }
 }
